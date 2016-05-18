@@ -8,12 +8,25 @@
 
 > mdel lua command for redis clients
 
+## mdel redis command
+
+Deletes all the keys matching a specific regex, for example
+
+```
+set foo:one val
+set foo:two val
+mdel foo:*
+get foo:one <- nil
+get foo:two <- nil
+```
+
+Note: this is *not* meant to be used in production. Supports Node 4+.
+
 ## Install
 
 ```
 $ npm install --save redis-mdel
 ```
-
 
 ## Usage
 
@@ -32,6 +45,20 @@ const Redis = require('ioredis');
 const { name, lua, numberOfKeys } = require('mdel');
 const redis = new Redis();
 redis.defineCommand(name, { lua, numberOfKeys });
+```
+
+Then, just run like any other command:
+
+```js
+redis.mdel('foo:*');
+```
+
+## Tests
+
+There are unit tests and integration tests. Needs Node 6+ to run. The integration tests require redis to be installed.
+
+```bash
+npm test
 ```
 
 ## License
