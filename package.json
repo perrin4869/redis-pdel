@@ -29,7 +29,10 @@
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
     "babel-preset-es2015-node4": "^2.1.0",
+    "babel-preset-es2015-node6": "^0.2.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
     "eslint": "^2.10.2",
@@ -41,6 +44,7 @@
     "gulp-mocha": "^2.2.0",
     "gulp-replace": "^0.5.4",
     "gulp-util": "^3.0.7",
+    "ioredis": "^1.15.1",
     "isparta": "^4.0.0",
     "mocha": "^2.4.5",
     "sinon": "^1.17.4"
