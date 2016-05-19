@@ -33,8 +33,9 @@ module.exports = () => {
         redis.set('bar:2', 'val'),
       ]);
 
-      await redis.pdel('foo:*');
+      const count = await redis.pdel('foo:*');
 
+      expect(count).to.equal(2);
       expect(await redis.mget([
         'foo:1',
         'foo:2',
