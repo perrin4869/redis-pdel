@@ -1,18 +1,18 @@
 import Redis from 'ioredis';
 import { expect } from 'chai';
-import { install as mdel } from '../../lib';
+import { install as pdel } from '../../lib';
 
 module.exports = () => {
   describe('integration', () => {
-    const keyPrefix = 'mdel:test:';
+    const keyPrefix = 'pdel:test:';
     const redis = new Redis({ keyPrefix });
-    mdel(redis);
+    pdel(redis);
 
     beforeEach(async function() {
       const keys = await redis
         .multi()
-        .mdel('foo:*')
-        .mdel('bar:*')
+        .pdel('foo:*')
+        .pdel('bar:*')
         .keys(`${keyPrefix}foo:*`)
         .keys(`${keyPrefix}bar:*`)
         .exec();
@@ -33,7 +33,7 @@ module.exports = () => {
         redis.set('bar:2', 'val'),
       ]);
 
-      await redis.mdel('foo:*');
+      await redis.pdel('foo:*');
 
       expect(await redis.mget([
         'foo:1',

@@ -1,4 +1,4 @@
-export const name = 'mdel';
+export const name = 'pdel';
 export const lua = `{{__LUA_PLACEHOLDER__}}`;
 export const numberOfKeys = 1;
 export function install(ioredis) {
