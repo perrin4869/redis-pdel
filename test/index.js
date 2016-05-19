@@ -1,7 +1,7 @@
 const unit = require('./unit');
 const integration = require('./integration');
 
-describe('redis-mdel', () => {
+describe('redis-pdel', () => {
   unit();
   integration();
 });

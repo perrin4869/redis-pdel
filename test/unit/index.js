@@ -6,8 +6,8 @@ import { expect } from 'chai';
 import { name, lua, numberOfKeys, install } from '../../lib';
 
 const expectation = {
-  name: 'mdel',
-  lua: fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'mdel.lua'), 'utf8'),
+  name: 'pdel',
+  lua: fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'pdel.lua'), 'utf8'),
   numberOfKeys: 1,
 };
 

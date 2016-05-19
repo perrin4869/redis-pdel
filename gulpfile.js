@@ -21,7 +21,7 @@ gulp.task('build', ['lint'], () => (
   .pipe(babel())
   .pipe(replace(
     '{{__LUA_PLACEHOLDER__}}',
-    fs.readFileSync(path.join(__dirname, 'src', 'mdel.lua'))
+    fs.readFileSync(path.join(__dirname, 'src', 'pdel.lua'))
   ))
   .pipe(gulp.dest('lib'))
 ));
