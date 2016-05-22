@@ -1,28 +1,18 @@
-const fs = require('fs');
-const path = require('path');
 const gulp = require('gulp');
 const util = require('gulp-util');
-const babel = require('gulp-babel');
 const mocha = require('gulp-mocha');
-const eslint = require('gulp-eslint');
-const replace = require('gulp-replace');
+const rename = require('gulp-rename');
+const lua2js = require('gulp-redis-lua2js');
 const compiler = require('babel-core/register');
 
-const src = 'src/index.js';
+const src = 'src/pdel.lua';
 
-gulp.task('lint', () =>
+gulp.task('build', () => (
   gulp.src(src)
-  .pipe(eslint())
-  .pipe(eslint.format())
-);
-
-gulp.task('build', ['lint'], () => (
-  gulp.src(src)
-  .pipe(babel())
-  .pipe(replace(
-    '{{__LUA_PLACEHOLDER__}}',
-    fs.readFileSync(path.join(__dirname, 'src', 'pdel.lua'))
-  ))
+  .pipe(lua2js({ numberOfKeys: 1 }))
+  .pipe(rename(path => {
+    path.basename = 'index';
+  }))
   .pipe(gulp.dest('lib'))
 ));
 
