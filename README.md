@@ -58,7 +58,9 @@ redis.pdel('foo:*');
 There are unit tests and integration tests. Needs Node 6+ to run. The integration tests require redis to be installed.
 
 ```bash
-npm test
+npm test:unit
+npm test:integration
+npm test # run both tests
 ```
 
 ## License

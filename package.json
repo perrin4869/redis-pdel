@@ -5,6 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "gulp test",
+    "test:unit": "mocha test/unit",
+    "test:integration": "mocha test/integration",
     "build": "gulp build",
     "cover": "babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage",
