@@ -42,7 +42,7 @@ Additionally, the necessary information is exported:
 
 ```js
 const Redis = require('ioredis');
-const { name, lua, numberOfKeys } = require('pdel');
+const { name, lua, numberOfKeys } = require('redis-pdel');
 const redis = new Redis();
 redis.defineCommand(name, { lua, numberOfKeys });
 ```
