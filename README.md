@@ -1,5 +1,7 @@
 # redis-pdel
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/perrin4869/redis-pdel.svg)](https://greenkeeper.io/)
+
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
 [![Dependency Status][dependency-status-badge]][dependency-status]
