@@ -1,6 +1,6 @@
 {
   "name": "redis-pdel",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "pdel lua command for redis clients",
   "main": "lib/index.js",
   "scripts": {
