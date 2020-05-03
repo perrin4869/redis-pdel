@@ -1,11 +1,13 @@
-import Redis from 'ioredis';
-import { expect } from 'chai';
-import { install as pdel } from '../../lib';
+const Redis = require('ioredis');
+const { use, expect } = require('chai');
+const { lua, name, numberOfKeys } = require('../..');
+
+use(require('chai-as-promised'));
 
 describe('integration', () => {
   const keyPrefix = 'pdel:test:';
   const redis = new Redis({ keyPrefix });
-  pdel(redis);
+  redis.defineCommand(name, { lua, numberOfKeys });
 
   beforeEach(async () => {
     const keys = await redis
@@ -20,9 +22,7 @@ describe('integration', () => {
     expect(keys[3][1].length).to.equal(0);
   });
 
-  after(async () => {
-    await redis.disconnect();
-  });
+  after(() => redis.disconnect());
 
   it('should delete foo keys but not bar keys', async () => {
     await Promise.all([
@@ -32,14 +32,12 @@ describe('integration', () => {
       redis.set('bar:2', 'val'),
     ]);
 
-    const count = await redis.pdel('foo:*');
-
-    expect(count).to.equal(2);
-    expect(await redis.mget([
+    await expect(redis.pdel('foo:*')).to.become(2);
+    return expect(redis.mget([
       'foo:1',
       'foo:2',
       'bar:1',
       'bar:2',
-    ])).to.deep.equal([null, null, 'val', 'val']);
+    ])).to.become([null, null, 'val', 'val']);
   });
 });
