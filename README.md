@@ -33,14 +33,6 @@ The easiest usecase is to use with [https://github.com/luin/ioredis](ioredis) as
 
 ```js
 const Redis = require('ioredis');
-const redis = new Redis();
-require('redis-pdel').install(redis);
-```
-
-Additionally, the necessary information is exported:
-
-```js
-const Redis = require('ioredis');
 const { name, lua, numberOfKeys } = require('redis-pdel');
 const redis = new Redis();
 redis.defineCommand(name, { lua, numberOfKeys });
@@ -54,9 +46,10 @@ redis.pdel('foo:*');
 
 ## Tests
 
-There are unit tests and integration tests. Needs Node 6+ to run. The integration tests require redis to be installed.
+There are unit tests and integration tests. The integration tests require redis to be running.
 
 ```bash
+docker-compose up
 npm test:unit
 npm test:integration
 npm test # run both tests
