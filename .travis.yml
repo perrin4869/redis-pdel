@@ -1,14 +1,15 @@
 language: node_js
 node_js:
-- '6'
+- '10'
+- '12'
+- '14'
 deploy:
   api_key:
-    secure: QFWNaJIYNvoW56txvnqwuIBQjkw/V95IPChqpIG5rNTo+zpk3MS6D7FL2KI6E6WOKkkn0n8I4Hr3a7MtVlImRTiauZPxC6ZOttEJfJf3Kbuo0+aSPdR9r0gDGuPyijeyvrUCOB78l/OndkwqEyViG2OI964z/R/L5j/g9siPjIcwLi9JV08poXxAtbPQuMNSG42IZGvZ9iAuNGNZjFeUca08sjfW/3p4CBA2EJH6ayp6FTeebzkrPLsbRUy5qdf7o8aORrrDAyYOraCDP0nWc3pB7gIfZ+DdVKGWxILi4PCvqytYpUs9cz3DgBbWwLPUKCBUR4Vte1lQvzkn0XhkiPO7H5xf+t63zvuLAaU2gtpv4RQoKjHmSGOi7grqRi/H0cZE1O35QcNVzfHGasjVorOcM5kREIu884Sl/zLn8Ouia7hhvZ4hi+yBbDFbmf/hGcPs6obvIfnK5VoWf32wWEno2LQDbpbpXfovm+W9LTvPiAAMQ/AX+p6+1ObnMaccX3pR1rellhnX/zfUW8lo+V07xSrGZaYpoQzvYj7S70SaIjxBOri/ZnxvjIVt9N9XelDHTpLS+Dh9gDHCYji9fXbWhhcL/l2caOo2WZjz2fYBhe58cjpWhkRJxd8+Q3r5Fz1b2GF0iIglfqhXc9oZDd40qXNIqcH0i6KPKKKmxgk=
+    secure: LjLL7yWhJSZfS7eXrHI0GLe9prA4pkCvJONX8qe7wAdJsT2+MoqDq2Jh0zH3jldvPq/P3Fj66e8zhzvwviKkfRnotSp/1Lwj9JYi0RN8FeJ0vLhE5XWfnwfGrkxymawT139bcRqPY8rRquHWIy62SU6zRouxz0B5PVcY97J1125bJC3GZtdX2JbHbVpC9X9OkTLqbWqa9Bmup2crqJ+TFzTeYBceFS1DONpQodoTRa20crQ5yHUiGhESLbzP/0DnwSJd2I7oDMqFdyxWXIdCleNtCKANuvDf2wxTsjRwKAsXmnizrQ241prhx51LEfvny4GNAZXEYwN7VSsSiAI6wbcyV4ORgnPEqZ42aUyzH4G57VkKxGljEZqYDG+Z1w/rSpPBuolmZdSHRAOcVxn1Z/wVMGbI+raqkzs0TC1VufMP28cLkkZ64c58nKuVaofPsUi4ZiXEsUerrkEdiQv/BctPcfp0rLzZJjiDKhbr/6CEtywjZheAg8t6Q1bwvHYK2yoGh1/peXmGXIar5G0c6I8axQALRcYu/HEXs20pjCa9TCdZ+W3uCsUDzjKrRA/mpHy3HlxlVGsmjn21ChW7KQgRIXlhqSMK9vrpI5bv5AysaOLXZtA/DlmYbI/5Dz5vY+uB3/t+cs8pa6GCrxsI7vxiQCYZmGyhi+TnGPr7loY=
   email: julian@dotcore.co.il
   provider: npm
+  skip_cleanup: true # prevent having to rebuild all files
   on:
     tags: true
-after_script:
-- npm run coveralls
 services:
 - redis-server
