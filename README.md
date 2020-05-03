@@ -66,14 +66,14 @@ npm test # run both tests
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
 
-[build-badge]: https://img.shields.io/travis/perrin4869/redis-pdel/master.svg?style=flat-square
-[build]: https://travis-ci.org/perrin4869/redis-pdel
+[build-badge]: https://img.shields.io/travis/dotcore64/redis-pdel/master.svg?style=flat-square
+[build]: https://travis-ci.org/dotcore64/redis-pdel
 
 [npm-badge]: https://img.shields.io/npm/v/redis-pdel.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/redis-pdel
 
-[dependency-status-badge]: https://david-dm.org/perrin4869/redis-pdel.svg?style=flat-square
-[dependency-status]: https://david-dm.org/perrin4869/redis-pdel
+[dependency-status-badge]: https://david-dm.org/dotcore64/redis-pdel.svg?style=flat-square
+[dependency-status]: https://david-dm.org/dotcore64/redis-pdel
 
-[dev-dependency-status-badge]: https://david-dm.org/perrin4869/redis-pdel/dev-status.svg?style=flat-square
-[dev-dependency-status]: https://david-dm.org/perrin4869/redis-pdel#info=devDependencies
+[dev-dependency-status-badge]: https://david-dm.org/dotcore64/redis-pdel/dev-status.svg?style=flat-square
+[dev-dependency-status]: https://david-dm.org/dotcore64/redis-pdel#info=devDependencies
